@@ -1,20 +1,20 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import { Archivo, Space_Mono } from 'next/font/google'
+import { DM_Sans, Libre_Baskerville } from 'next/font/google'
 import './globals.css'
 
-const body = Archivo({ subsets: ['latin'], variable: '--font-body' })
-const display = Space_Mono({ subsets: ['latin'], weight: ['400', '700'], variable: '--font-display' })
+const body = DM_Sans({ subsets: ['latin'], variable: '--font-body' })
+const display = Libre_Baskerville({ subsets: ['latin'], weight: ['400', '700'], variable: '--font-display' })
 
 export const metadata: Metadata = {
-  title: 'Sun Cerrae Quinones | Project Coordinator Portfolio',
-  description: 'Project Coordinator with 8 years of operations experience in cross-functional delivery, workflow improvement, healthcare revenue cycle, and digital production.',
+  title: 'Sun Cerrae Quinones | Project Coordinator',
+  description: 'Project Coordinator based in Charlotte, NC, with experience supporting healthcare operations, revenue cycle, and digital production teams.',
   generator: 'v0.app',
 }
 
 export const viewport: Viewport = {
   colorScheme: 'light',
-  themeColor: '#f5f0e6',
+  themeColor: '#f7f2e8',
 }
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
