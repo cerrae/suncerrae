@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { ArrowDown, ArrowUpRight, ChevronDown, Download, Mail, MapPin, Menu, X } from 'lucide-react'
 
-const resumeUrl = 'https://cerrae.github.io/Sun-Cerrae-Quinones-Portfolio/Sun_Quinones_Resume.pdf'
+const resumeUrl = '/Sun_Cerrae_Quinones_Resume.pdf'
 
 const roles = [
   { role: 'Revenue Cycle Project Coordinator', company: 'Harlow Dental', dates: 'July 2024 — Present', summary: 'I coordinate claims work across billing, providers, and insurance teams while maintaining weekly visibility into open cases and performance.', details: ['Reduced A/R by 15% by improving the claims workflow between billing, providers, and insurance; monitored progress through monthly aging reports', 'Manage 25+ cases weekly as one of three coordinators responsible for intake, follow-up, and resolution', 'Create standardized KPI reports for weekly leadership review, tracking credentialing and enrollment status'] },
