@@ -1,1 +1,0 @@
-I already gave you this exact file as a download earlier in this conversation — easiest is to re-open that portfolio.tsx file I sent and copy its full contents, then paste over what's in components/portfolio.tsx on GitHub. If you don't have it handy, here it is again in a clean block to copy from:
