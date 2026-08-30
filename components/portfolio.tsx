@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { ArrowDown, ArrowUpRight, Check, ChevronDown, Mail, Menu, X } from 'lucide-react'
+import { ArrowDown, ArrowUpRight, Check, ChevronDown, Download, Mail, Menu, X } from 'lucide-react'
 
 const roles = [
   { role: 'Revenue Cycle Project Coordinator', company: 'Harlow Dental', dates: 'Apr 2024 — Present', status: 'Active', intake: 'Stepped into a revenue cycle team where claims moved between billing, providers, and insurance with no consistent handoff process.', action: 'Rebuilt the claims workflow end to end, managed 25+ cases weekly, and built standardized KPI reporting reviewed every week.', outcome: 'Cut A/R by 15%, tracked through monthly aging reports.', metric: '−15% A/R' },
@@ -23,13 +23,13 @@ const phases = [
 
 function Header() {
   const [open, setOpen] = useState(false)
-  const links = [['Experience', 'experience'], ['Work', 'work'], ['Capabilities', 'capabilities'], ['Credentials', 'credentials']]
+  const links = [['Summary', 'summary'], ['Impact', 'work'], ['Experience', 'experience'], ['Credentials', 'credentials']]
   return <header className="site-header">
     <a href="#top" className="monogram" aria-label="Sun Cerrae Quinones, home">SCQ<span>.</span></a>
     <nav className="desktop-nav" aria-label="Main navigation">{links.map(([label, href]) => <a key={href} href={`#${href}`}>{label}</a>)}</nav>
-    <a className="header-contact" href="mailto:suncquinones@gmail.com">Let&apos;s talk <ArrowUpRight size={16}/></a>
+    <a className="header-contact" href="https://cerrae.github.io/Sun-Cerrae-Quinones-Portfolio/Sun_Quinones_Resume.pdf" download target="_blank" rel="noreferrer">Résumé <Download size={16}/></a>
     <button className="menu-button" onClick={() => setOpen(!open)} aria-expanded={open} aria-controls="mobile-nav" aria-label={open ? 'Close menu' : 'Open menu'}>{open ? <X/> : <Menu/>}</button>
-    {open && <nav id="mobile-nav" className="mobile-nav" aria-label="Mobile navigation">{links.map(([label, href]) => <a key={href} href={`#${href}`} onClick={() => setOpen(false)}>{label}</a>)}<a href="mailto:suncquinones@gmail.com">Contact</a></nav>}
+    {open && <nav id="mobile-nav" className="mobile-nav" aria-label="Mobile navigation">{links.map(([label, href]) => <a key={href} href={`#${href}`} onClick={() => setOpen(false)}>{label}</a>)}<a href="https://cerrae.github.io/Sun-Cerrae-Quinones-Portfolio/Sun_Quinones_Resume.pdf" download target="_blank" rel="noreferrer">Download résumé</a><a href="mailto:suncquinones@gmail.com">Contact</a></nav>}
   </header>
 }
 
@@ -54,7 +54,7 @@ function Experience() {
 function Work() {
   const [phase, setPhase] = useState(0)
   return <section id="work" className="section work-section">
-    <div className="section-heading"><p className="eyebrow">Selected work / Anonymized</p><h2>Plans built for<br/><em>the real world.</em></h2></div>
+    <div className="section-heading"><p className="eyebrow">Selected impact / Hiring evidence</p><h2>How I move work<br/><em>forward.</em></h2></div>
     <article className="case case-dark">
       <div className="case-copy"><p className="case-index">01 / Compliance governance</p><h3>Claims compliance control framework</h3><p>A governance system for a multi-provider practice where checks previously happened only when someone noticed a problem.</p><div className="case-result"><span>Control principle</span><strong>Every exception gets an owner and a forced path to resolution.</strong></div></div>
       <div className="control-list">{[['Claims accuracy audit','Weekly','Revenue Cycle Lead'],['Credentialing status','Monthly','Compliance Officer'],['Denial trend review','Monthly','Practice Manager'],['Documentation retention','Quarterly','Compliance Officer']].map((row, i) => <div className="control-row" key={row[0]}><span>0{i+1}</span><strong>{row[0]}</strong><small>{row[1]}</small><small>{row[2]}</small></div>)}<div className="escalation"><Check size={18}/> Flag → Log → Route in 48 hrs → Document → Review</div></div>
@@ -73,15 +73,16 @@ function Work() {
 export function Portfolio() {
   return <main id="top"><Header/>
     <section className="hero">
-      <div className="hero-status"><span className="pulse"/> Charlotte, NC · Open to opportunity</div>
-      <h1><span>Structure for</span><span>work that <em>moves.</em></span></h1>
-      <div className="hero-lower"><p>Project coordinator working at the intersection of healthcare operations, revenue cycle, and digital delivery.</p><div className="hero-actions"><a className="primary-action" href="mailto:suncquinones@gmail.com"><Mail size={18}/> Start a conversation</a><a className="text-action" href="https://cerrae.github.io/Sun-Cerrae-Quinones-Portfolio/Sun_Quinones_Resume.pdf" target="_blank" rel="noreferrer">View résumé <ArrowUpRight size={17}/></a></div></div>
-      <a href="#experience" className="scroll-cue">Explore the work <ArrowDown size={17}/></a>
-      <div className="proof-strip"><div><strong>8</strong><span>Years across operations</span></div><div><strong>25+</strong><span>Cases managed weekly</span></div><div><strong>15%</strong><span>A/R reduction</span></div><div><strong>0</strong><span>Missed campaign launches</span></div></div>
+      <div className="hero-status"><span className="pulse"/> Charlotte, NC · Project Coordinator</div>
+      <h1><span>I turn complex</span><span>work into <em>delivery.</em></span></h1>
+      <div className="hero-lower"><div><p className="hero-kicker">Cross-functional coordination · Workflow improvement · Risk visibility</p><p>Project coordinator with 8 years of operations experience aligning people, priorities, and processes across healthcare, revenue cycle, and digital delivery.</p></div><div className="hero-actions"><a className="primary-action" href="https://cerrae.github.io/Sun-Cerrae-Quinones-Portfolio/Sun_Quinones_Resume.pdf" download target="_blank" rel="noreferrer"><Download size={18}/> Download résumé</a><a className="text-action" href="#work">Review impact <ArrowDown size={17}/></a></div></div>
+      <a href="#summary" className="scroll-cue">Why I&apos;m a fit <ArrowDown size={17}/></a>
+      <div className="proof-strip"><div><strong>8</strong><span>Years in operations</span></div><div><strong>25+</strong><span>Cases coordinated weekly</span></div><div><strong>15%</strong><span>Reduction in A/R</span></div><div><strong>0</strong><span>Missed campaign launches</span></div></div>
     </section>
-    <Experience/><Work/>
+    <section id="summary" className="section recruiter-summary"><div className="summary-lead"><p className="eyebrow">Executive summary / Role fit</p><h2>A coordinator who makes progress <em>visible.</em></h2></div><div className="summary-copy"><p>I bring structure to work with many owners, moving deadlines, and little room for error. My approach is practical: clarify the outcome, expose dependencies, assign ownership, and keep stakeholders informed before risks become surprises.</p><div className="fit-tags" aria-label="Core qualifications">{['Cross-functional delivery','Stakeholder communication','Milestone tracking','Workflow documentation','Risk escalation','KPI reporting'].map(tag => <span key={tag}>{tag}</span>)}</div><a className="summary-contact" href="mailto:suncquinones@gmail.com"><Mail size={17}/> Discuss a Project Coordinator role <ArrowUpRight size={17}/></a></div></section>
+    <Work/><Experience/>
     <section id="capabilities" className="section capabilities-section"><div className="section-heading"><p className="eyebrow">Capabilities / How I contribute</p><h2>Calm in the<br/><em>complexity.</em></h2></div><div className="cap-grid">{[['Revenue cycle','Claims, billing, A/R, credentialing, provider enrollment'],['Coordination','Cross-functional teams, vendors, and external stakeholders'],['Systems','JIRA, MS Project, CMS platforms, KPI reporting'],['Process','Workflow documentation, onboarding design, standardization'],['Methodology','Agile fundamentals, milestone tracking, stakeholder management'],['Technical','HTML, CSS, and SQL—enough to work with engineering, not around it']].map((cap, i) => <article key={cap[0]}><span>0{i+1}</span><h3>{cap[0]}</h3><p>{cap[1]}</p></article>)}</div></section>
     <section id="credentials" className="section credentials-section"><p className="eyebrow">Credentials / On file</p><div className="credential-list">{[['Google Project Management: Specialization','Coursera','Aug 2022'],['Agile Project Management','Coursera','Aug 2022'],['Project Management','Bryan University','Feb 2022'],['Advanced Full Stack Web Development','Bryan University','Feb 2022']].map((cert, i) => <div key={cert[0]}><span>{String(i+1).padStart(2,'0')}</span><strong>{cert[0]}</strong><small>{cert[1]}</small><small>{cert[2]}</small></div>)}</div></section>
-    <footer id="contact"><p className="eyebrow">Next project / Start here</p><h2>Have a messy<br/>workflow? <em>Good.</em></h2><a className="footer-email" href="mailto:suncquinones@gmail.com">suncquinones@gmail.com <ArrowUpRight/></a><div className="footer-meta"><span>Sun Cerrae Quinones · Charlotte, NC</span><div><a href="tel:9803715532">(980) 371-5532</a><a href="https://www.linkedin.com/in/suncerrae" target="_blank" rel="noreferrer">LinkedIn</a></div><span>© {new Date().getFullYear()}</span></div></footer>
+    <footer id="contact"><p className="eyebrow">Recruiting / Next step</p><h2>Need a coordinator<br/>who <em>delivers?</em></h2><div className="footer-actions"><a className="footer-resume" href="https://cerrae.github.io/Sun-Cerrae-Quinones-Portfolio/Sun_Quinones_Resume.pdf" download target="_blank" rel="noreferrer"><Download/> Download résumé</a><a className="footer-email" href="mailto:suncquinones@gmail.com">suncquinones@gmail.com <ArrowUpRight/></a></div><div className="footer-meta"><span>Sun Cerrae Quinones · Project Coordinator · Charlotte, NC</span><div><a href="tel:9803715532">(980) 371-5532</a><a href="https://www.linkedin.com/in/suncerrae" target="_blank" rel="noreferrer">LinkedIn</a></div><span>© {new Date().getFullYear()}</span></div></footer>
   </main>
 }

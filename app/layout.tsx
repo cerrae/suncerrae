@@ -7,8 +7,8 @@ const body = Archivo({ subsets: ['latin'], variable: '--font-body' })
 const display = Space_Mono({ subsets: ['latin'], weight: ['400', '700'], variable: '--font-display' })
 
 export const metadata: Metadata = {
-  title: 'Sun Cerrae Quinones | Project Coordinator',
-  description: 'Portfolio of Sun Cerrae Quinones, a project coordinator specializing in healthcare operations, revenue cycle, and digital delivery.',
+  title: 'Sun Cerrae Quinones | Project Coordinator Portfolio',
+  description: 'Project Coordinator with 8 years of operations experience in cross-functional delivery, workflow improvement, healthcare revenue cycle, and digital production.',
   generator: 'v0.app',
 }
 
